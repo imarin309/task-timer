@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: "Rounded Mplus 1c", "Hiragino Maru Gothic ProN", sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+.app-container {
+  text-align: center;
+  padding: 30px;
+}
+
+/* --- Header（横並び） --- */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.header-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #b7f3e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* 丸い枠に収めるため */
+}
+
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 枠内にフィット */
+}
+
+.header-timer {
+  background-color: #b7f3e2;
+  border-radius: 50px;
+  padding: 30px 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Task List --- */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 85%;
+  max-width: 750px;
+  border-radius: 25px;
+  padding: 10px;
+  transition: transform 0.1s ease;
+}
+
+.task-item:hover {
+  transform: scale(1.01);
+}
+
+.task-status,
+.task-name,
+.task-button,
+.task-time {
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.task-status {
+  width: 90px;
+  font-weight: bold;
+}
+
+.task-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.task-button {
+  width: 70px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.task-time {
+  width: 80px;
+  font-weight: bold;
+}
+
+/* --- 色バリエーション（淡く・柔らかく）--- */
+.teal {
+  background-color: #c9f5ec;
+}
+
+.pink {
+  background-color: #ffe4eb;
+}
+
+.gray {
+  background-color: #ececec;
+}
+
+/* ボタン色統一（優しいパステル） */
+.task-item.teal .task-button {
+  background-color: #a6e4d4;
+}
+.task-item.pink .task-button {
+  background-color: #f8c5d1;
+}
+.task-item.gray .task-button {
+  background-color: #d6d6d6;
+}
+
+.task-button:hover {
+  background-color: #b8f0e0;
+}
+
+/* --- Add Button --- */
+.add-button {
+  font-size: 3.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 50px;
+  color: #666;
+  transition: transform 0.1s ease, color 0.3s ease;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+  color: #44c3b6;
+}
