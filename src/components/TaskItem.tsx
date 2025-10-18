@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TaskName from "./TaskName";
+import TaskStatus from "./TaskStatus";
 
 type Props = {
   status: string;
@@ -20,7 +21,7 @@ const TaskItem: React.FC<Props> = ({ status, name, color, onUpdateTaskName }) =>
 
   return (
     <div className={`task-item ${color}`}>
-      <div className="task-status">{status}</div>
+      <TaskStatus TaskStatus={status}/>
       <TaskName TaskName={taskName} onUpdate={handleUpdateName} />
     </div>
   );
