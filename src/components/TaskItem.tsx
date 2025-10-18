@@ -7,10 +7,18 @@ type Props = {
   name: string;
   color: string;
   onUpdateTaskName?: (newName: string) => void;
+  onUpdateTaskStatus?: (newStatus: string) => void;
 };
 
-const TaskItem: React.FC<Props> = ({ status, name, color, onUpdateTaskName }) => {
+const TaskItem: React.FC<Props> = ({
+  status,
+  name,
+  color,
+  onUpdateTaskName,
+  onUpdateTaskStatus,
+}) => {
   const [taskName, setTaskName] = useState(name);
+  const [taskStatus, setTaskStatus] = useState(status);
 
   const handleUpdateName = (newName: string) => {
     setTaskName(newName);
@@ -18,10 +26,17 @@ const TaskItem: React.FC<Props> = ({ status, name, color, onUpdateTaskName }) =>
       onUpdateTaskName(newName);
     }
   };
+    // ステータス更新
+  const handleUpdateStatus = (newStatus: string) => {
+    setTaskStatus(newStatus);
+    if (onUpdateTaskStatus) {
+      onUpdateTaskStatus(newStatus);
+    }
+  };
 
   return (
     <div className={`task-item ${color}`}>
-      <TaskStatus TaskStatus={status}/>
+      <TaskStatus TaskStatus={taskStatus} onUpdate={(newStatus) => handleUpdateStatus(newStatus)} />
       <TaskName TaskName={taskName} onUpdate={handleUpdateName} />
     </div>
   );
