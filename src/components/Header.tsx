@@ -1,5 +1,5 @@
 import React from "react";
-import anpanImage from "../assets/anpan.png"; // 画像のインポート
+import anpanImage from "../assets/anpan.png";
 
 const greeting: string = 'お疲れ様だぽよ、いつも頑張ってるね'
 
