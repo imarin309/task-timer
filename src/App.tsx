@@ -16,7 +16,7 @@ const App: React.FC = () => {
     const newTask: Task = {
       id: Date.now(),
       status: "未着手",
-      name: `task ${String.fromCharCode(65 + tasks.length)}`, // A, B, C...と増える
+      name: `task ${String.fromCharCode(65 + tasks.length)}`,
       color: "pink",
     };
     setTasks([...tasks, newTask]);
